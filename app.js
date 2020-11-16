@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     new face()
+    new hammer()
 })
 
 class face{
@@ -28,10 +29,37 @@ class face{
 
     smack(){
         const head = document.querySelectorAll(".img")
+        const wrapper = document.querySelector(".wrapper")
+        console.log(wrapper)
+        
         for(let current of head){
-            current.addEventListener("click", (e)=>{
-                console.log("click")
+            wrapper.addEventListener("click", (e)=>{
+                if(e.target === current) {
+                    console.log("click")}
             })
         }
     }
+}
+
+class hammer{
+    constructor(){
+        this.moveHammer()
+    }
+
+    moveHammer(e){
+        const stretch = 100;
+        const body = document.getElementsByTagName("body")
+        const hammer = document.querySelector("#hammer")
+
+        const {offsetWidth: width, offsetheight: height} = body
+        let {offsetX: x, offsetY: y} = e; 
+
+        const xStretch = Math.round((x /width * stretch) - (stretch / 2)); 
+        const yStretch = Math.round((y /width * stretch) - (stretch / 2)); 
+
+          
+
+
+    }
+
 }

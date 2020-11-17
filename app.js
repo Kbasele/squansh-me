@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     new face()
     new hammer()
+    new page()
 })
 
 class face{
@@ -19,8 +20,8 @@ class face{
             head[hole].classList.add("jumpUp1")
             setTimeout(()=>{ 
                 head[hole].classList.remove("jumpUp1")
-            }, 1500);
-            }, 1500);
+            }, 1100);
+            }, 1100);
     }
 
     hole(){
@@ -85,5 +86,59 @@ class hammer{
                 hammer.style.removeProperty("animation")
             }, 140);
     }
+
+}
+
+class page{
+    constructor(){
+        this.hide()
+        this.buttonClick()
+    }
+
+    hide(){
+        const element = document.querySelector(".wrapper")
+        element.style.display ="none"
+    }
+    show(){
+        const element = document.querySelector(".wrapper")
+        element.style.display ="grid"
+    }
+
+    visible(){
+        const element = document.querySelector(".wrapper")
+        element.style.display ="grid"
+
+    }
+
+    buttonClick(){
+        document.querySelector("#landing-page button").addEventListener("click", ()=>{
+            this.shrinkButton()
+            setTimeout(() => {
+                this.visible()
+            }, 2000);
+
+        })
+        
+    }
+
+    shrinkButton(){
+        let button = document.querySelector("#landing-page button")
+        let header = document.querySelector(".squansh-text")
+        button.style.animation ="shrink 0.7s ease forwards"
+
+
+
+        setTimeout(function(){
+            button.style.removeProperty("animation")
+            button.style.display ="none"
+
+            header.style.animation ="swipe 1.3s ease forwards"
+            setTimeout(() => {
+                header.style.removeProperty("animation")
+                header.style.display ="none"
+            }, 1000);
+        }, 700);
+    }
+
 
 }

@@ -6,19 +6,25 @@
   }
   
   body{
+    cursor: none; 
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: burlywood;
     height: 100vh;
-
+    
     #hammer{
         position: absolute;
+        left: 30px;
         width: 250px;
         height: 200px;
         background:url("/pictures/pnghut_hammer-hand-tool-mallet-wood-natural-rubber-sledgehammer_PScmd6FqSt.png");
         background-size: cover;
+
         z-index: 5;
+        transform: translate(-50px, -70px);
+        pointer-events: none;
+
     }
       .wrapper {
         position: relative;
@@ -54,7 +60,16 @@
                 height: 100%;
                 background-size: 100%;
                 z-index: 3;
-                
+            }
+            .img2{
+                position: relative;
+                left: 33%;
+                transform:translateY(-60px);
+                background: url("/pictures/image.png") no-repeat;
+                width: 150px;
+                height: 100%;
+                background-size: 100%;
+                z-index: 3;
             }
 
         }
@@ -82,7 +97,7 @@
                 }
 
             50%{
-                transform:translateY(-200px);
+                transform:translateY(-230px);
 
             }    
             100%{
@@ -128,4 +143,9 @@
 
   .hide{
 
+  }
+
+  @keyframes slam{
+      from{ transform: rotate( 0deg);}
+      to{ transform: rotate( -35deg);}
   }

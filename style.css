@@ -6,6 +6,7 @@
 }
 
 body {
+  cursor: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,11 +22,15 @@ body {
 
 body #hammer {
   position: absolute;
+  left: 30px;
   width: 250px;
   height: 200px;
   background: url("/pictures/pnghut_hammer-hand-tool-mallet-wood-natural-rubber-sledgehammer_PScmd6FqSt.png");
   background-size: cover;
   z-index: 5;
+  -webkit-transform: translate(-50px, -70px);
+          transform: translate(-50px, -70px);
+  pointer-events: none;
 }
 
 body .wrapper {
@@ -67,6 +72,18 @@ body .wrapper .squeres .img {
   z-index: 3;
 }
 
+body .wrapper .squeres .img2 {
+  position: relative;
+  left: 33%;
+  -webkit-transform: translateY(-60px);
+          transform: translateY(-60px);
+  background: url("/pictures/image.png") no-repeat;
+  width: 150px;
+  height: 100%;
+  background-size: 100%;
+  z-index: 3;
+}
+
 .jumpUp1 {
   -webkit-animation-name: jumpUp1;
           animation-name: jumpUp1;
@@ -80,8 +97,8 @@ body .wrapper .squeres .img {
             transform: translateY(-70px);
   }
   50% {
-    -webkit-transform: translateY(-200px);
-            transform: translateY(-200px);
+    -webkit-transform: translateY(-230px);
+            transform: translateY(-230px);
   }
   100% {
     -webkit-transform: translateY(-70px);
@@ -95,8 +112,8 @@ body .wrapper .squeres .img {
             transform: translateY(-70px);
   }
   50% {
-    -webkit-transform: translateY(-200px);
-            transform: translateY(-200px);
+    -webkit-transform: translateY(-230px);
+            transform: translateY(-230px);
   }
   100% {
     -webkit-transform: translateY(-70px);
@@ -138,4 +155,24 @@ body .wrapper .squeres .img {
             }
         }
     } */
+@-webkit-keyframes slam {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-35deg);
+            transform: rotate(-35deg);
+  }
+}
+@keyframes slam {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-35deg);
+            transform: rotate(-35deg);
+  }
+}
 /*# sourceMappingURL=style.css.map */

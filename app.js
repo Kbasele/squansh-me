@@ -129,7 +129,6 @@ class page{
                 this.visible()
                 new face()
                 setTimeout(this.timer, 5000);
-                setTimeout(this.endGame, 28000);
 
 
             }, 2000);
@@ -205,16 +204,17 @@ class page{
                 const timer = document.querySelector(".timer")
                 const endScore = document.querySelector(".endScore h2")
                 const score = document.querySelector(".score h1")
-                endScore.style.display="inline-block"
                 const againButton = document.querySelector(".button")
-                againButton.style.display ="none"
                 
+                endScore.style.display="inline-block"
                 endScore.innerHTML = `You squashed me ${score.innerHTML} times`
                 againButton.style.display ="block"
              
+                score.style.display ="none"
                 element.style.display ="none"
                 number.style.display ="none"
                 timer.style.display ="none"
+                
             }
         }, 100);
     }

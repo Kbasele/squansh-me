@@ -12,6 +12,18 @@
     align-items: center;
     background-color: #FAA275;
     height: 100vh;
+    
+    .score{
+        font-size: 60px;
+        align-items: center;
+        display: flex;
+        top: 5%;
+        position: absolute;
+        color: white;
+        text-shadow: 5px 5px 0px black;
+        font-weight: 900;
+
+    }
 
     .countDown{
         position: absolute;
@@ -30,18 +42,18 @@
         .squansh-text{
             font-family: 'Chewy', cursive;
             color: white;
-            font-size: 150px;
+            font-size: 10vw;
             font-weight: 900;
             text-shadow: 10px 10px 0px black;
         }
 
         button{
-            height: 100px;
-            width: 100px;
+            height: 150px;
+            width: 150px;
             font-size:20px;
             border-radius: 100%;
             background-color: transparent;
-            border: white solid 2px;
+            border: white solid 4px;
             color: white;
             transition: 0.3s;
             

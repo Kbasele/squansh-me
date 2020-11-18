@@ -22,6 +22,21 @@ body {
   overflow: hidden;
 }
 
+body .score {
+  font-size: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 5%;
+  position: absolute;
+  color: white;
+  text-shadow: 5px 5px 0px black;
+  font-weight: 900;
+}
+
 body .countDown {
   position: absolute;
   z-index: 3;
@@ -46,18 +61,18 @@ body #landing-page {
 body #landing-page .squansh-text {
   font-family: 'Chewy', cursive;
   color: white;
-  font-size: 150px;
+  font-size: 10vw;
   font-weight: 900;
   text-shadow: 10px 10px 0px black;
 }
 
 body #landing-page button {
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   font-size: 20px;
   border-radius: 100%;
   background-color: transparent;
-  border: white solid 2px;
+  border: white solid 4px;
   color: white;
   -webkit-transition: 0.3s;
   transition: 0.3s;

@@ -15,12 +15,12 @@ class face{
         setTimeout(()=>{ 
             setInterval(()=>{
                 const hole =  this.hole()
-                head[hole].style.animation ="jumpUp1 1.4s ease"
+                head[hole].style.animation ="jumpUp1 1.1s ease"
     
                 setTimeout(()=>{ 
                     head[hole].style.removeProperty("animation")
-                }, 1400);
-                }, 1400);
+                }, 1100);
+                }, 1100);
         }, 6000);
         
     }
@@ -31,11 +31,15 @@ class face{
 
     smack(){
         const head = document.querySelectorAll(".img")
+        let scoreElement = document.querySelector(".score h1")
         
+        let score = 0; 
         for(let current of head){
             let count = 0
             window.addEventListener("click", (e)=>{
                 if(e.target === current) {
+                    score++
+                    scoreElement.innerHTML =score
                     count++ 
                     console.log(count)
                     if(count==1){
@@ -163,7 +167,7 @@ class page{
                     }, 2000);
                 }    
             }, 1000);
-        }, 2000);
+        }, 3000);
 
 
         

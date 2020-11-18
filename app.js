@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    new face()
     new hammer()
     new page()
 })
@@ -13,15 +12,17 @@ class face{
 
     jumpUp(){
         const head = document.querySelectorAll(".img")
+        setTimeout(()=>{ 
+            setInterval(()=>{
+                const hole =  this.hole()
+                head[hole].style.animation ="jumpUp1 0.9s ease"
+    
+                setTimeout(()=>{ 
+                    head[hole].style.removeProperty("animation")
+                }, 900);
+                }, 900);
+        }, 6000);
         
-        setInterval(()=>{
-            const hole =  this.hole()
-
-            head[hole].classList.add("jumpUp1")
-            setTimeout(()=>{ 
-                head[hole].classList.remove("jumpUp1")
-            }, 1100);
-            }, 1100);
     }
 
     hole(){
@@ -30,11 +31,10 @@ class face{
 
     smack(){
         const head = document.querySelectorAll(".img")
-        const wrapper = document.querySelector(".wrapper")
         
         for(let current of head){
             let count = 0
-            wrapper.addEventListener("click", (e)=>{
+            window.addEventListener("click", (e)=>{
                 if(e.target === current) {
                     count++ 
                     console.log(count)
@@ -61,16 +61,11 @@ class hammer{
     }
 
     mouse(){
-        const wrapper = document.querySelector(".wrapper")
-
-        wrapper.addEventListener("mousemove", this.moveHammer)
+        window.addEventListener("mousemove", this.moveHammer)
         window.addEventListener("click", this.slamHammer)
-
-        
 
     }
     moveHammer(e){
-        const stretch = 100;
         const hammer = document.querySelector("#hammer")
 
         hammer.style.top = e.pageY + "px";
@@ -93,19 +88,22 @@ class page{
     constructor(){
         this.hide()
         this.buttonClick()
+        this.countDown()
     }
 
     hide(){
         const element = document.querySelector(".wrapper")
+        const number = document.querySelector(".countDown h1")
+
         element.style.display ="none"
-    }
-    show(){
-        const element = document.querySelector(".wrapper")
-        element.style.display ="grid"
+        number.style.display ="none"
     }
 
     visible(){
         const element = document.querySelector(".wrapper")
+        const number = document.querySelector(".countDown h1")
+
+        number.style.display ="block"
         element.style.display ="grid"
 
     }
@@ -115,6 +113,8 @@ class page{
             this.shrinkButton()
             setTimeout(() => {
                 this.visible()
+                new face()
+
             }, 2000);
 
         })
@@ -140,5 +140,33 @@ class page{
         }, 700);
     }
 
+    countDown(){
+        const number = document.querySelector(".countDown h1")
+        let count = 3; 
+        
+        setTimeout(() => {
+            const myInterval = setInterval(()=>{
+                number.innerHTML =count
+                --count
+                if(count == -1){
+                    number.innerHTML ="GO"
+                }
+                if(count == -1){
+                    clearInterval(myInterval);
+                    setTimeout(()=>{ 
+                        number.style.animation="swipe 1.3s ease"
+                        
+                    }, 1000);
+                    setTimeout(()=>{                     
+                        number.style.display="none"
+                        number.style.visible="hidden"
+                    }, 2000);
+                }    
+            }, 1000);
+        }, 2000);
+
+
+        
+    }
 
 }

@@ -15,7 +15,7 @@ class face{
         setTimeout(()=>{ 
             setInterval(()=>{
                 const hole =  this.hole()
-                head[hole].style.animation ="jumpUp1 0.9 ease"
+                head[hole].style.animation ="jumpUp1 0.9s ease"
     
                 setTimeout(()=>{ 
                     head[hole].style.removeProperty("animation")

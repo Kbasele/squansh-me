@@ -15,12 +15,12 @@ class face{
         setTimeout(()=>{ 
             setInterval(()=>{
                 const hole =  this.hole()
-                head[hole].style.animation ="jumpUp1 1.1s ease"
+                head[hole].style.animation ="jumpUp1 3s ease"
     
                 setTimeout(()=>{ 
                     head[hole].style.removeProperty("animation")
-                }, 1100);
-                }, 1100);
+                }, 3000);
+                }, 3000);
         }, 6000);
         
     }
@@ -89,6 +89,7 @@ class hammer{
 }
 
 class page{
+    
     constructor(){
         this.hide()
         this.buttonClick()
@@ -98,17 +99,26 @@ class page{
     hide(){
         const element = document.querySelector(".wrapper")
         const number = document.querySelector(".countDown h1")
+        const timer = document.querySelector(".timer")
+        const endScore = document.querySelector(".endScore h1")
+        const againButton = document.querySelector(".button")
 
         element.style.display ="none"
         number.style.display ="none"
+        timer.style.display ="none"
+        endScore.style.display ="none"
+        againButton.style.display ="none"
     }
 
     visible(){
         const element = document.querySelector(".wrapper")
         const number = document.querySelector(".countDown h1")
+        const timer = document.querySelector(".timer")
 
         number.style.display ="block"
         element.style.display ="grid"
+        timer.style.display ="inline-block"
+
 
     }
 
@@ -118,6 +128,9 @@ class page{
             setTimeout(() => {
                 this.visible()
                 new face()
+                setTimeout(this.timer, 6000);
+                setTimeout(this.endGame, 28000);
+
 
             }, 2000);
 
@@ -173,4 +186,36 @@ class page{
         
     }
 
+    timer(){
+        const timer = document.querySelector(".timer")
+        let second = 20; 
+        let mSecond = 100;  
+
+        setInterval(() => {
+            mSecond -=10
+            if(mSecond == 0){
+                mSecond = 100
+                --second
+            }
+            timer.innerHTML=second
+
+            if(second == 0){
+                const element = document.querySelector(".wrapper")
+                const number = document.querySelector(".countDown h1")
+                const timer = document.querySelector(".timer")
+                const endScore = document.querySelector(".endScore h2")
+                const score = document.querySelector(".score h1")
+                endScore.style.display="inline-block"
+                const againButton = document.querySelector(".button")
+                againButton.style.display ="none"
+                
+                endScore.innerHTML = `You squashed me ${score.innerHTML} times`
+                againButton.style.display ="block"
+             
+                element.style.display ="none"
+                number.style.display ="none"
+                timer.style.display ="none"
+            }
+        }, 100);
+    }
 }

@@ -22,8 +22,45 @@ body {
   overflow: hidden;
 }
 
+body .button {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  height: 150px;
+  width: 150px;
+  font-size: 20px;
+  border-radius: 100%;
+  background-color: transparent;
+  border: white solid 4px;
+  color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+body .button:hover {
+  background-color: white;
+  color: #FAA275;
+}
+
+body .endScore {
+  position: absolute;
+  font-size: 70px;
+  font-family: 'Chewy', cursive;
+  text-shadow: 5px 5px 0px black;
+  color: white;
+}
+
+body .timer {
+  color: rgba(250, 196, 169, 0.308);
+  font-size: 900px;
+  font-weight: 900;
+  position: absolute;
+}
+
 body .score {
-  font-size: 60px;
+  font-size: 100px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -34,6 +71,7 @@ body .score {
   position: absolute;
   color: white;
   text-shadow: 5px 5px 0px black;
+  font-family: 'Chewy', cursive;
   font-weight: 900;
 }
 

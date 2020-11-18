@@ -149,11 +149,6 @@ body .wrapper .squeres .img {
   height: 100%;
   background-size: 100%;
   z-index: 3;
-  background-color: red;
-}
-
-body .wrapper .squeres .img:hover {
-  background-color: royalblue;
 }
 
 body .wrapper .squeres .img2 {

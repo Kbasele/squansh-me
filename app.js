@@ -15,12 +15,12 @@ class face{
         setTimeout(()=>{ 
             setInterval(()=>{
                 const hole =  this.hole()
-                head[hole].style.animation ="jumpUp1 3s ease"
+                head[hole].style.animation ="jumpUp1 0.9 ease"
     
                 setTimeout(()=>{ 
                     head[hole].style.removeProperty("animation")
-                }, 3000);
-                }, 3000);
+                }, 900);
+                }, 900);
         }, 6000);
         
     }
@@ -128,7 +128,7 @@ class page{
             setTimeout(() => {
                 this.visible()
                 new face()
-                setTimeout(this.timer, 6000);
+                setTimeout(this.timer, 5000);
                 setTimeout(this.endGame, 28000);
 
 

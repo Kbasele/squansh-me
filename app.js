@@ -15,12 +15,12 @@ class face{
         setTimeout(()=>{ 
             setInterval(()=>{
                 const hole =  this.hole()
-                head[hole].style.animation ="jumpUp1 0.9s ease"
+                head[hole].style.animation ="jumpUp1 1.2s ease"
     
                 setTimeout(()=>{ 
                     head[hole].style.removeProperty("animation")
-                }, 900);
-                }, 900);
+                }, 1200);
+                }, 1200);
         }, 6000);
         
     }

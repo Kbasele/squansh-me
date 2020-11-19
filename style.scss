@@ -3,10 +3,10 @@
   padding: 0;
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
+  cursor:none; 
 }
   
   body{
-      cursor:none; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,6 +40,10 @@
         font-family: 'Chewy', cursive;
         text-shadow: 5px 5px 0px black;
         color: white;
+
+        a{
+            text-decoration: none;
+        }
 
 
     }
